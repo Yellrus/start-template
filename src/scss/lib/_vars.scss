@@ -1,0 +1,59 @@
+//============================================
+// Global variables
+//============================================
+
+// Colors
+//============================================
+
+// 1. To prevent linting errors these
+//    values are stored in variables.
+
+$black: #000; // 1.
+$white: #fff; // 1.
+
+$primary: #00f;
+
+$gray-powder: #f7f7f7;
+$gray-dust: #ddd;
+$gray-concrete: #767676;
+$gray-space: #111;
+
+$color-txt: lighten($black, 13.5%);
+$color-bg: $white;
+$color-error: #ed331a;
+$color-success: #2fa714;
+
+$color-link: $primary;
+
+$z-index-modal: 100;
+
+// Typography
+//============================================
+
+$font: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Roboto', 'Ubuntu',
+    'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-mono: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+    Courier New, monospace;
+$fs: 16px;
+$lh: 1.5;
+
+$font-size-h1: 40px;
+$font-size-h2: 32px;
+$font-size-h3: 24px;
+$font-size-h4: 18px;
+$font-size-h5: 16px;
+$font-size-h6: 16px;
+
+// Motion
+//============================================
+
+$motion: 200ms;
+
+// Breakpoints
+//============================================
+$phone: '(max-width: 767px)';
+$tablet: '(max-width: 1024px)';
+
+@custom-media --phone-viewport ($phone);
+@custom-media --tablet-viewport ($tablet);

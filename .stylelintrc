@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "duplicates": true,
+  "efficient": "always",
+  "exclude": [],
+  "reporterOptions": {
+    "verbose": true,
+    "ruleName": true,
+    "absolutePath": true
+  },
+  "valid": true,
+  "rules": {
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": ["include", "extend", "mixin", "if", "for", "content", "at-root", "custom-media", "each", "warn", "else", "function", "return"]
+    }],
+    "no-descending-specificity": null,
+    "selector-list-comma-newline-after": null,
+    "property-no-unknown": [true, {
+      "ignoreProperties": ["overflow-scrolling"]
+    }],
+    "indentation": null,
+    "block-opening-brace-space-before": null,
+    "selector-descendant-combinator-no-non-space": null,
+    "declaration-colon-newline-after": null,
+    "value-list-comma-newline-after": null
+  }
+}

@@ -1,0 +1,178 @@
+//============================================
+// Defaults
+//============================================
+
+// Fix viewport (привет, IE10) http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+@at-root {
+    @-ms-viewport {
+        width: device-width;
+    }
+}
+
+// Подключение локального шрифта
+/* stylelint-disable */
+// @font-face {
+//   font-family: 'FONTNAME';
+//   src: url('../fonts/FONTNAME.woff2') format('woff2'),
+//        url('../fonts/FONTNAME.woff') format('woff');
+//   font-weight: 400;
+//   font-style: normal;
+//   font-display: swap;
+// }
+/* stylelint-enable */
+
+body {
+    display: flex; // Исправляем баг в IE для min-height and flexbox (flex-direction:column)
+    flex-direction: column; // и прижимаем footer в IE 10-11
+    margin: 0;
+    min-height: 100%;
+    font-family: $font;
+    font-size: $fs;
+    line-height: $lh;
+    text-align: left;
+    word-break: break-word;
+    background: $color-bg;
+    color: $color-txt;
+}
+
+[tabindex='-1']:focus {
+    outline: none !important;
+}
+
+// Коррекция для кликабельных элементов с указанной ролью в iOS
+[role='button'] {
+    cursor: pointer;
+}
+
+// Для Safari.
+[type='search']::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+a,
+button,
+[role='button'],
+input,
+label,
+select,
+textarea {
+    touch-action: manipulation; // Стилевая коррекция 300ms задержки (для поддерживающих браузеров)
+    margin: 0; // Убираем margin в Firefox и Safari
+}
+
+button,
+input {
+    overflow: visible; // Покажем торчащее в Edge
+    text-transform: none; // Уберём наследование text transform в Firefox
+}
+
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+    -webkit-appearance: button; // Коррекция проблем стилизации для Safari
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+}
+
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'] {
+    -webkit-appearance: listbox; // Коррекция для Mobile Safari (https://github.com/twbs/bootstrap/issues/11266)
+}
+
+input,
+optgroup,
+select,
+textarea {
+    vertical-align: middle;
+    color: inherit;
+    font: inherit;
+    border: 0;
+    background: transparent;
+    padding: 0;
+}
+
+embed,
+object,
+iframe {
+    border: 0;
+    vertical-align: bottom;
+}
+
+iframe {
+    width: 100%;
+    max-width: 100%;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+}
+
+textarea {
+    overflow: auto; // Удаление верт. скролла в IE.
+    resize: vertical; // Правильное изменение размеров
+}
+
+svg {
+    fill: currentColor;
+
+    a &,
+    button & {
+        pointer-events: none; // для Edge
+    }
+
+    &:not(:root) {
+        overflow: hidden; // Скрыть выступающее за границы в IE
+    }
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+    vertical-align: bottom;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: $color-link;
+    background-color: transparent;
+    text-decoration-skip: ink;
+    -webkit-text-decoration-skip: objects;
+    transition: color $motion ease-in-out;
+    text-decoration: none;
+    &:not(.btn) {
+        &:hover,
+        &:focus {
+            color: $primary;
+        }
+    }
+}
+
+address {
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font;
+    font-weight: inherit;
+    line-height: inherit;
+    color: currentColor;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}

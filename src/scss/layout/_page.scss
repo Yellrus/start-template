@@ -1,0 +1,22 @@
+//============================================
+// Layout
+//============================================
+
+.page {
+    min-width: 320px;
+    min-height: 100%;
+
+    &__inner {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+
+    &__footer-wrapper {
+        flex-shrink: 0;
+    }
+}

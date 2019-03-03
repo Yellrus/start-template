@@ -1,0 +1,12 @@
+//============================================
+// Footer
+//============================================
+
+.page-footer {
+    flex-shrink: 0;
+    background-color: darkseagreen;
+
+    @media (--tablet-viewport) {
+        background-color: rgb(109, 170, 185);
+    }
+}
